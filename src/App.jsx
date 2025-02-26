@@ -15,8 +15,8 @@ import windIcon from "./assets/windspeed.svg";
 export default function App(){
  return (
   <>
-    <main className="bg-[url('../icons/sunny.jpg')] h-screen bg-no-repeat bg-cover flex flex-col gap-8 items-center p-4">
-      <section className="flex justify-center w-3/5 h-12 shadow-[2px_2px_10px_rgb(0,0,0,0.5)] rounded-lg">
+    <main className="bg-[url('../icons/sunny.jpg')] bg-cover bg-center min-h-screen md:h-screen w-full overflow-auto bg-no-repeat flex flex-col gap-4 md:gap-8 items-center pt-2 md:p-4 relative">
+      <section className="flex justify-center w-11/12 md:w-3/5 h-12 shadow-[2px_2px_10px_rgb(0,0,0,0.5)] rounded-lg">
         <div className="flex flex-grow relative items-center">
             <div className="absolute left-2">
                <svg className="fill-white max-w-8" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.5986 41.1514L35.4102 31.9629C37.6223 29.0179 38.8165 25.4333 38.8125 21.75C38.8125 12.3418 31.1582 4.6875 21.75 4.6875C12.3418 4.6875 4.6875 12.3418 4.6875 21.75C4.6875 31.1582 12.3418 38.8125 21.75 38.8125C25.4333 38.8165 29.0179 37.6223 31.9629 35.4102L41.1514 44.5986C41.6165 45.0144 42.2231 45.2364 42.8468 45.2189C43.4704 45.2015 44.0636 44.9459 44.5048 44.5048C44.9459 44.0636 45.2015 43.4704 45.2189 42.8468C45.2364 42.2231 45.0144 41.6165 44.5986 41.1514ZM9.5625 21.75C9.5625 19.3395 10.2773 16.9832 11.6165 14.979C12.9556 12.9748 14.8591 11.4127 17.086 10.4902C19.313 9.56778 21.7635 9.32642 24.1277 9.79668C26.4918 10.2669 28.6634 11.4277 30.3679 13.1321C32.0723 14.8366 33.2331 17.0082 33.7033 19.3723C34.1736 21.7365 33.9322 24.187 33.0098 26.414C32.0873 28.6409 30.5252 30.5444 28.521 31.8835C26.5168 33.2227 24.1605 33.9375 21.75 33.9375C18.5189 33.9336 15.4212 32.6483 13.1364 30.3636C10.8517 28.0788 9.56638 24.9811 9.5625 21.75Z" /></svg>
@@ -29,55 +29,55 @@ export default function App(){
         </div>
       </section>
 
-      <section className="flex items-start w-2/3 gap-8 h-full">
-         <section className="flex flex-col gap-8 h-full">
+      <section className="flex flex-col md:flex-row items-start w-11/12 md:w-2/3 gap-2 md:gap-4 h-screen">
+         <section className="flex md:flex-col gap-2 md:gap-4 h-50 w-full md:w-auto md:h-full">
             {/*Location Card */}
-            <div className="bg-gray-700/77 w-84 flex flex-col gap-2 text-white text-center p-4 rounded-lg shadow-[2px_2px_10px_rgb(0,0,0,0.5)]">
-               <p className="text-lg">Vadodara, Gujarat</p>
-               <p className="text-7xl">12:44 PM</p>
-               <p className="text-xl">26 Feb 2025</p>
+            <div className="flex justify-between bg-gray-700/77 w-2/5 md:w-84 flex flex-col gap-2 text-white text-center p-2 md:p-4 rounded-lg shadow-[2px_2px_10px_rgb(0,0,0,0.5)]">
+               <p className="text-md md:text-lg">Vadodara, Gujarat</p>
+               <p className="text-3xl md:text-7xl">12:44PM</p>
+               <p className="text-sm md:text-xl">26 Feb 2025</p>
             </div>
 
             {/*5-day Forcast Card*/}
-            <div className="bg-gray-700/77 flex flex-col gap-4 w-84 h-full rounded-lg p-4 text-white shadow-[2px_2px_10px_rgb(0,0,0,0.5)]" >
-               <p className="text-3xl text-center font-semibold">5 Day Forecast :</p>
-               <div className="flex flex-col justify-between w-full gap-4 pr-4">
-                  <div className="flex items-center justify-between w-full m-2">
-                    <img className="w-8" src={cloudyIcon} />
-                    <p className="text-2xl"> 26°C</p>
-                    <p className="text-lg">Firday, 27 Feb</p>
+            <div className="bg-gray-700/77 flex flex-col gap-2 flex-grow md:w-84 h-full rounded-lg p-2 md:p-4 text-white shadow-[2px_2px_10px_rgb(0,0,0,0.5)]" >
+               <p className="text-lg md:text-3xl text-center font-semibold">5 Day Forecast :</p>
+               <div className="flex flex-col justify-between w-full gap-1 md:gap-4 pr-2 md:pr-4">
+                  <div className="flex items-center justify-between w-full md:m-2">
+                    <img className="w-6 md:w-8" src={cloudyIcon} />
+                    <p className="text-sm md:text-2xl"> 26°C</p>
+                    <p className="text-xs md:text-lg">Firday, 27 Feb</p>
                   </div>
-                  <div className="flex items-center justify-between w-full m-2">
-                    <img className="w-8" src={coldIcon} />
-                    <p className="text-2xl"> 26°C</p>
-                    <p className="text-lg">Firday, 27 Feb</p>
+                  <div className="flex items-center justify-between w-full md:m-2">
+                    <img className="w-6 md:w-8" src={coldIcon} />
+                    <p className="text-sm md:text-2xl"> 26°C</p>
+                    <p className="text-xs md:text-lg">Firday, 27 Feb</p>
                   </div>
-                  <div className="flex items-center justify-between w-full m-2">
-                    <img className="w-8" src={rainyIcon} />
-                    <p className="text-2xl"> 26°C</p>
-                    <p className="text-lg">Firday, 27 Feb</p>
+                  <div className="flex items-center justify-between w-full md:m-2">
+                    <img className="w-6 md:w-8" src={rainyIcon} />
+                    <p className="text-sm md:text-2xl"> 26°C</p>
+                    <p className="text-xs md:text-lg">Firday, 27 Feb</p>
                   </div>
-                  <div className="flex items-center justify-between w-full m-2">
-                    <img className="w-8" src={thunderstormIcon} />
-                    <p className="text-2xl"> 26°C</p>
-                    <p className="text-lg">Firday, 27 Feb</p>
+                  <div className="flex items-center justify-between w-full md:m-2">
+                    <img className="w-6 md:w-8" src={thunderstormIcon} />
+                    <p className="text-sm md:text-2xl"> 26°C</p>
+                    <p className="text-xs md:text-lg">Firday, 27 Feb</p>
                   </div>
-                  <div className="flex items-center justify-between w-full m-2">
-                    <img className="w-8" src={windyIcon} />
-                    <p className="text-2xl"> 26°C</p>
-                    <p className="text-lg">Firday, 27 Feb</p>
+                  <div className="flex items-center justify-between w-full md:m-2">
+                    <img className="w-6 md:w-8" src={windyIcon} />
+                    <p className="text-sm md:text-2xl"> 26°C</p>
+                    <p className="text-xs md:text-lg">Firday, 27 Feb</p>
                   </div>
                </div>
             </div>
          </section>
          {/*  Main Card */}
-         <div className="bg-gray-700/77 w-full h-full p-4 rounded-lg text-white flex flex-col justify-between items-center gap-8 shadow-[2px_2px_10px_rgb(0,0,0,0.5)]">
+         <div className="bg-gray-700/77 w-full md:h-full p-2 md:p-4 rounded-lg text-white flex flex-col justify-start md:justify-between items-center gap-4 md:gap-8 shadow-[2px_2px_10px_rgb(0,0,0,0.5)]">
          {/* Top section */}
-            <section className="flex w-full justify-between items-center gap-4 w-40">
-               <p className="text-7xl text-center">26°C</p>
-               <div className="flex flex-col">
+            <section className="flex w-full justify-between items-center gap-2 md:gap-4 w-40">
+               <p className="text-3xl md:text-7xl text-center">26°C</p>
+               <div className="flex md:flex-col">
                   <div className="flex items-center">
-                     <svg className="w-12" viewBox="0 0 74 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <svg className="w-8 md:w-12" viewBox="0 0 74 79" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path d="M37 24.6706C37.851 24.6706 38.5416 23.9418 38.5416 23.0438V19.7901C38.5416 18.8921 37.851 18.1633 37 18.1633C36.1482 18.1633 35.4583 18.8921 35.4583 19.7901V23.0438C35.4583 23.9418 36.1482 24.6706 37 24.6706Z" fill="white"/>
                      <path d="M21.5833 37.6851H18.5C17.6482 37.6851 16.9583 38.4139 16.9583 39.3119C16.9583 40.2099 17.6482 40.9387 18.5 40.9387H21.5833C22.4343 40.9387 23.125 40.2099 23.125 39.3119C23.125 38.4139 22.4343 37.6851 21.5833 37.6851Z" fill="white"/>
                      <path d="M55.5 37.6851H52.4167C51.5649 37.6851 50.875 38.4139 50.875 39.3119C50.875 40.2099 51.5649 40.9387 52.4167 40.9387H55.5C56.351 40.9387 57.0417 40.2099 57.0417 39.3119C57.0417 38.4139 56.351 37.6851 55.5 37.6851Z" fill="white"/>
@@ -87,12 +87,12 @@ export default function App(){
                      <path d="M38.0899 49.5495C37.4879 48.9142 36.512 48.9142 35.91 49.5495L31.285 54.4299C30.683 55.0652 30.683 56.0949 31.285 56.7302C31.887 57.3655 32.8629 57.3655 33.4649 56.7302L35.4583 54.6267V58.8337C35.4583 59.7317 36.1482 60.4605 37 60.4605C37.851 60.4605 38.5416 59.7317 38.5416 58.8337V54.6267L40.535 56.7302C40.8364 57.0483 41.2303 57.2069 41.625 57.2069C42.0196 57.2069 42.4135 57.0483 42.7149 56.7302C43.317 56.0949 43.317 55.0652 42.7149 54.4299L38.0899 49.5495Z" fill="white"/>
                      </svg>
                      <div>
-                        <p className="text-md font-semibold">Sun Rise Time :</p>
-                        <p className="text-sm">07:00 AM</p>
+                        <p className="text-sm md:text-md font-semibold">Sun Rise Time :</p>
+                        <p className="text-xs md:text-sm">07:00 AM</p>
                      </div>
                   </div>
                   <div className="flex items-center">
-                     <svg className="w-12" viewBox="0 0 74 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <svg className="w-8 md:w-12" viewBox="0 0 74 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path d="M37 25.0466C37.851 25.0466 38.5416 24.3078 38.5416 23.3975V20.0993C38.5416 19.189 37.851 18.4502 37 18.4502C36.1482 18.4502 35.4583 19.189 35.4583 20.0993V23.3975C35.4583 24.3078 36.1482 25.0466 37 25.0466Z" fill="white"/>
                      <path d="M21.5833 38.2394H18.5C17.6482 38.2394 16.9583 38.9782 16.9583 39.8885C16.9583 40.7988 17.6482 41.5376 18.5 41.5376H21.5833C22.4343 41.5376 23.125 40.7988 23.125 39.8885C23.125 38.9782 22.4343 38.2394 21.5833 38.2394Z" fill="white"/>
                      <path d="M55.5 38.2394H52.4167C51.5649 38.2394 50.875 38.9782 50.875 39.8885C50.875 40.7988 51.5649 41.5376 52.4167 41.5376H55.5C56.351 41.5376 57.0417 40.7988 57.0417 39.8885C57.0417 38.9782 56.351 38.2394 55.5 38.2394Z" fill="white"/>
@@ -102,33 +102,33 @@ export default function App(){
                      <path d="M40.535 53.5645L38.5416 55.6968V51.4322C38.5416 50.5219 37.851 49.7831 37 49.7831C36.1482 49.7831 35.4583 50.5219 35.4583 51.4322V55.6968L33.4649 53.5645C32.8629 52.9205 31.887 52.9205 31.285 53.5645C30.683 54.2084 30.683 55.2523 31.285 55.8963L35.91 60.8436C36.2114 61.166 36.6053 61.3268 37 61.3268C37.3946 61.3268 37.7885 61.166 38.0899 60.8436L42.7149 55.8963C43.317 55.2523 43.317 54.2084 42.7149 53.5645C42.1129 52.9205 41.137 52.9205 40.535 53.5645Z" fill="white"/>
                      </svg>
                      <div>
-                        <p className="text-md font-semibold">Sun Set Time :</p>
-                        <p className="text-sm">06:00 PM</p>
+                        <p className="text-sm md:text-md font-semibold">Sun Set Time :</p>
+                        <p className="text-xs md:text-sm">06:00 PM</p>
                      </div>
                   </div>
                </div>
             </section>
             {/* Middle Section */}
             <section className="flex flex-col gap-2 justify-center items-center">
-               <img className="w-68" src={sunnyIcon} />
-               <p className="text-center text-4xl font-semibold">Sunny</p>
+               <img className="w-36 md:w-68" src={sunnyIcon} />
+               <p className="text-center text-4xl md:text-4xl font-semibold">Sunny</p>
             </section>
 
             {/* Bottom Section */}
-            <section className="flex w-full justify-between items-start gap-8">
-               <div className="flex gap-8 items-center">
-                  <div className="flex flex-col w-24 items-center">
-                     <img className="max-w-16" src={humidityIcon} />
-                     <p className="text-center text-md">Humidity</p>
+            <section className="flex w-full justify-between items-start gap-4 md:gap-8">
+               <div className="flex gap-2 md:gap-8 items-center">
+                  <div className="flex flex-col w-20 md:w-24 items-center">
+                     <img className="w-8 md:max-w-16" src={humidityIcon} />
+                     <p className="text-center text-xs md:text-md">Humidity</p>
                   </div>
-                  <p className="text-4xl text-center">44%</p>
+                  <p className="text:xl md:text-4xl text-center">44%</p>
                </div>
-               <div className="flex gap-8 items-center">
-                  <div className="flex flex-col w-24 items-center">
-                     <img className="max-w-16" src={windIcon} />
-                     <p className="text-center text-md">Wind Speed</p>
+               <div className="flex gap-2 md:gap-8 items-center">
+                  <div className="flex flex-col w-20 md:w-24 items-center">
+                     <img className="w-8 md:max-w-16" src={windIcon} />
+                     <p className="text-center text-xs md:text-md">Wind Speed</p>
                   </div>
-                  <p className="text-4xl text-center">2 km/h</p>
+                  <p className="text:xl md:text-4xl text-center">2 km/h</p>
                </div>
             </section>
          </div>
