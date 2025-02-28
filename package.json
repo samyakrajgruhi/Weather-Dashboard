@@ -13,6 +13,7 @@
     "@tailwindcss/postcss": "^4.0.9",
     "@tailwindcss/vite": "^4.0.9",
     "autoprefixer": "^10.4.20",
+    "dayjs": "^1.11.13",
     "lucide-react": "^0.476.0",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
