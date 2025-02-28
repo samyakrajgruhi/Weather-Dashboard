@@ -17,7 +17,7 @@ import LocationCard from './LocationCard.jsx';
 
 export default function FiveDayForecast(){
    return (
-      <div className="bg-gray-700/77 flex flex-col gap-2 md:gap-4 flex-grow rounded-lg p-2 md:p-4 text-white shadow-[2px_2px_10px_rgb(0,0,0,0.5)]" >
+      <div className="bg-gray-700/75 hover:bg-gray-700/85 flex flex-col gap-2 md:gap-4 flex-grow rounded-lg p-2 md:p-4 text-white transition-shadow shadow-[2px_2px_10px_rgb(0,0,0,0.5)] hover:shadow-[2px_2px_5px_rgb(0,0,0,0.8)]" >
          <p className="text-lg md:text-3xl text-center font-semibold">5 Day Forecast :</p>
          <div className="flex flex-col justify-between w-full gap-1 md:gap-4 pr-2 md:pr-4">
             <div className="flex items-center justify-between md:m-2">

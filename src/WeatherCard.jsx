@@ -11,7 +11,7 @@ import windIcon from "./assets/windspeed.svg";
 export default function WeatherCard({weatherData}){
 
    return (
-      <div className="bg-gray-700/77 w-full md:w-3/5 md:h-full p-2 md:p-4 rounded-lg text-white flex flex-col justify-start md:justify-between items-center gap-4 md:gap-8 shadow-[2px_2px_10px_rgb(0,0,0,0.5)]">
+      <div className="bg-gray-700/75 hover:bg-gray-700/85 w-full md:w-3/5 md:h-full p-2 md:p-4 rounded-lg text-white flex flex-col justify-start md:justify-between items-center gap-4 md:gap-8 transition-shadow shadow-[2px_2px_10px_rgb(0,0,0,0.5)] hover:shadow-[2px_2px_5px_rgb(0,0,0,0.8)]">
       {/* Top section */}
          <section className="flex w-full justify-between items-center gap-2 md:gap-4">
             <div>
