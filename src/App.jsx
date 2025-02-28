@@ -15,82 +15,23 @@ export default function App(){
    const [city,setCity] = useState('');
    const [weatherData, setWeatherData] = useState(null);
    const [isLoading,setIsLoading] = useState(false);
-   const [error,setError] = useState(null);
-   console.log(weatherData);
 
-   const getWeatherByCoords = async (latitude, longitude) => {
-      try {
-         setIsLoading(true);
-         // You'll need to update your getWeather function to accept lat/lon or create a new function
-         const weatherData = await getWeather(`lat=${latitude}&lon=${longitude}`);
-         setWeatherData(weatherData);
-         if (weatherData?.city) {
-            setCity(weatherData.city);
-         }
-      } catch (err) {
-         console.error("Error fetching weather by coordinates:", err);
-         // Fall back to default city
-         fetchDefaultWeather();
-      } finally {
-         setIsLoading(false);
-      }
-   };
-
-   // Fallback function for default weather
    const fetchDefaultWeather = async () => {
       try {
-         setIsLoading(true);
-         const defaultWeatherData = await getWeather('Delhi');
+         const defaultWeatherData = await getWeather('New York');
          setWeatherData(defaultWeatherData);
-         setCity('Delhi');
+         setCity('New York');
+      // eslint-disable-next-line no-unused-vars
       } catch (err) {
-         setError("Could not fetch weather data. Please try again later.");
-         console.error("Error fetching default weather:", err);
-      } finally {
-         setIsLoading(false);
+         alert('Error fetchindata')
       }
    };
 
-   // Effect to get user's location on component mount
    useEffect(() => {
-      if (navigator.geolocation) {
-         navigator.geolocation.getCurrentPosition(
-            (position) => {
-               const { latitude, longitude } = position.coords;
-               getWeatherByCoords(latitude, longitude);
-            },
-            (error) => {
-               console.error("Geolocation error:", error);
-               fetchDefaultWeather();
-            },
-            { timeout: 10000 }
-         );
-      } else {
-         console.log("Geolocation is not supported by this browser.");
-         fetchDefaultWeather();
-      }
+      fetchDefaultWeather();
    }, []);
 
    
-
-   // Error state
-   if (error) {
-      return (
-         <div className="flex items-center justify-center h-screen bg-gray-800 text-white">
-            <div className="text-center p-6 bg-gray-700 rounded-lg shadow-lg">
-               <p className="text-xl text-red-400 mb-4">Error</p>
-               <p className="mb-4">{error}</p>
-               <button 
-                  className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                  onClick={fetchDefaultWeather}
-               >
-                  Try Again
-               </button>
-            </div>
-         </div>
-      );
-   }
-
    if (!weatherData) {
       return (
          <div className="flex items-center justify-center h-screen bg-gray-800 text-white">
