@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import  { useState } from 'react';
 import "./App.css";
 
@@ -57,7 +55,7 @@ export default function App(){
         country: currentWeatherData.sys.country,
         temp: Math.round(currentWeatherData.main.temp),
         feelsLike: Math.round(currentWeatherData.main.feels_like),
-        description: currentWeatherData.weather[0].description,
+        description: currentWeatherData.weather[0].main,
         icon: currentWeatherData.weather[0].icon,
         humidity: currentWeatherData.main.humidity,
         windSpeed: currentWeatherData.wind.speed
@@ -102,6 +100,7 @@ export default function App(){
         const mainDesc = Object.keys(descCounts).reduce((a, b) => 
           descCounts[a] > descCounts[b] ? a : b);
         
+        
         return {
           date: new Date(date).toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: 'numeric'}),
           maxTemp,
@@ -120,9 +119,28 @@ export default function App(){
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="max-w-lg mx-auto p-4">
+      {(()=>{
+        let background;
+          switch(weather?.description){
+            case 'Clouds':
+              console.log('this was selected');
+              background= './src/bg/cloudy.jpg';
+              break;
+            case 'Smoke':
+              console.log('this was selected');
+              background= './src/bg/sunny.jpg';
+              break;
+            default:
+              background = './bg/mixed.jpg';
+              break;
+          } 
+        return <img className="w-56" src={background} alt='Weather background' />;
+      })()} 
+      <img className="w-56" src="./bg/mixed.jpg"  alt="Icon" />
       <h1 className="text-2xl font-bold mb-4">Weather Dashboard</h1>
       
       <div className="flex mb-4">

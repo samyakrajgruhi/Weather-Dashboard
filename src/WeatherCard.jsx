@@ -31,7 +31,7 @@ export default function WeatherCard({weatherData}){
                   <path d="M38.0899 49.5495C37.4879 48.9142 36.512 48.9142 35.91 49.5495L31.285 54.4299C30.683 55.0652 30.683 56.0949 31.285 56.7302C31.887 57.3655 32.8629 57.3655 33.4649 56.7302L35.4583 54.6267V58.8337C35.4583 59.7317 36.1482 60.4605 37 60.4605C37.851 60.4605 38.5416 59.7317 38.5416 58.8337V54.6267L40.535 56.7302C40.8364 57.0483 41.2303 57.2069 41.625 57.2069C42.0196 57.2069 42.4135 57.0483 42.7149 56.7302C43.317 56.0949 43.317 55.0652 42.7149 54.4299L38.0899 49.5495Z" fill="white"/>
                   </svg>
                   <div>
-                     <p className="text-sm md:text-md font-semibold">Sun Rise Time :</p>
+                     <p className="text-sm font-thin md:text-md font-semibold">Sun Rise Time :</p>
                      <p className="text-xs md:text-sm">{weatherData.sunriseTime}</p>
                   </div>
                </div>
@@ -46,7 +46,7 @@ export default function WeatherCard({weatherData}){
                   <path d="M40.535 53.5645L38.5416 55.6968V51.4322C38.5416 50.5219 37.851 49.7831 37 49.7831C36.1482 49.7831 35.4583 50.5219 35.4583 51.4322V55.6968L33.4649 53.5645C32.8629 52.9205 31.887 52.9205 31.285 53.5645C30.683 54.2084 30.683 55.2523 31.285 55.8963L35.91 60.8436C36.2114 61.166 36.6053 61.3268 37 61.3268C37.3946 61.3268 37.7885 61.166 38.0899 60.8436L42.7149 55.8963C43.317 55.2523 43.317 54.2084 42.7149 53.5645C42.1129 52.9205 41.137 52.9205 40.535 53.5645Z" fill="white"/>
                   </svg>
                   <div>
-                     <p className="text-sm md:text-md font-semibold">Sun Set Time :</p>
+                     <p className="text-sm font-thin md:text-md font-semibold">Sun Set Time :</p>
                      <p className="text-xs md:text-sm">{weatherData.sunsetTime}</p>
                   </div>
                </div>
@@ -78,7 +78,7 @@ export default function WeatherCard({weatherData}){
                   default:
                      break;
                }
-               return <img className="w-36 md:w-68" src={icon} />;
+               return <img className="w-36 md:w-68" src={icon}  alt={"icon"}/>;
             })()}
             <p className="text-center text-4xl md:text-4xl font-semibold">{weatherData.weather}</p>
          </section>
