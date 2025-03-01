@@ -140,7 +140,7 @@ export default function App(){
           } 
         return <img className="w-56" src={background} alt='Weather background' />;
       })()} 
-      <img className="w-56" src="./bg/mixed.jpg"  alt="Icon" />
+      <img className="w-56" src="./bg/mixed.jpg" />
       <h1 className="text-2xl font-bold mb-4">Weather Dashboard</h1>
       
       <div className="flex mb-4">
