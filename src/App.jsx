@@ -61,7 +61,7 @@ export default function App(){
             return "url('/bg/winter.jpg')";
       } else if(weatherData.weather === 'Thunderstorm'){
             return "url('/bg/thunderstorm.jpg')";
-      } else if(weatherData.weather === 'Smoke' || weatherData.weather === 'Fog' || weatherData.weather === 'Mist'){
+      } else if(weatherData.weather === 'Smoke' || weatherData.weather === 'Fog' || weatherData.weather === 'Mist' || weatherData.weather === 'Haze'){
             return "url('/bg/smoke-fog.jpg')";
       } else {
          return "url('/bg/mixed.jpg')";

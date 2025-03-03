@@ -7,6 +7,8 @@ import thunderstormIcon from "./assets/thunderstorm.svg";
 import hazeIcon from "./assets/Haze.svg";
 import humidityIcon from "./assets/humidity.svg";
 import windIcon from "./assets/windspeed.svg";
+import smogIcon from "./assets/smog.svg";
+import mistIcon from "./assets/mist.svg";
 
 export default function WeatherCard({weatherData}){
 
@@ -73,7 +75,10 @@ export default function WeatherCard({weatherData}){
                      icon = sunnyIcon;
                      break;
                   case 'Smoke':
-                     icon = sunnyIcon;
+                     icon = smogIcon;
+                     break;
+                  case 'Mist':
+                     icon = mistIcon;
                      break;
                   default:
                      break;
