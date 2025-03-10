@@ -19,7 +19,7 @@ export default function App(){
    const [forecastData, setForecastData] = useState(null);
    const [isLoading,setIsLoading] = useState(false);
 
-   const apiKey = '915b19d92ea2344787dce2b9eb8cdec4' ;
+   const apiKey = '<PASTE_YOUR_OpenWeather_API_KEY_HERE>' ;
    const baseURL = 'https://api.openweathermap.org/data/2.5';
 
    const fetchDefaultWeather = async () => {
