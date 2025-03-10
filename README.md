@@ -1,3 +1,4 @@
+![Weather-Dashboard](https://socialify.git.ci/samyakrajgruhi/Weather-Dashboard/image?custom_description=Weather+Dashboard+is+a+responsive+web+application+built+with+React+and+Vite+that+provides+current+weather+information+and+a+5-day+forecast+for+different+locations+using+the+OpenWeatherMap+API.+It+features+a+clean+and+modern+UI+with+Tailwind+CSS+for+rapid+development.&description=1&font=KoHo&language=1&name=1&owner=1&pattern=Solid&theme=Dark)
 
 # Weather Dashboard
 
