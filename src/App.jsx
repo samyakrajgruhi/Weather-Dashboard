@@ -9,18 +9,25 @@ import CityInput from './CityInput.jsx';
 import LocationCard from './LocationCard.jsx';
 import FiveDayForecast from './FiveDayForecast.jsx';
 import WeatherCard from './WeatherCard.jsx';
+import {getForecast} from "./GetForecast.jsx";
 
 
 
 export default function App(){
    const [city,setCity] = useState('');
    const [weatherData, setWeatherData] = useState(null);
+   const [forecastData, setForecastData] = useState(null);
    const [isLoading,setIsLoading] = useState(false);
+
+   const apiKey = '915b19d92ea2344787dce2b9eb8cdec4' ;
+   const baseURL = 'https://api.openweathermap.org/data/2.5';
 
    const fetchDefaultWeather = async () => {
       try {
-         const defaultWeatherData = await getWeather('New York');
+         const defaultWeatherData = await getWeather('New York',apiKey,baseURL);
+         const defaultForecastData = await getForecast('New York',apiKey,baseURL);
          setWeatherData(defaultWeatherData);
+         setForecastData(defaultForecastData);
          setCity('New York');
       // eslint-disable-next-line no-unused-vars
       } catch (err) {
@@ -85,9 +92,12 @@ export default function App(){
                <CityInput
                    setCity={setCity}
                    setWeatherData={setWeatherData}
+                   setForecastData={setForecastData}
                    setIsLoading={setIsLoading}
                    isLoading={isLoading}
                    city={city}
+                   apiKey={apiKey}
+                   baseURL={baseURL}
                />
             </div>
          </section>
@@ -102,7 +112,9 @@ export default function App(){
 
 
                {/*5-day Forecast Card*/}
-               < FiveDayForecast/>
+               < FiveDayForecast
+                  forecastData={forecastData}
+               />
             </section>
             {/*  Main Weather Card */}
             <WeatherCard

@@ -1,23 +1,27 @@
 import {useRef} from 'react';
 import PropTypes from "prop-types";
 import { getWeather } from './GetWeather';
+import { getForecast } from './GetForecast';
 
-export default function CityInput({setCity, setWeatherData,setIsLoading,isLoading }){
-   
+export default function CityInput({setCity, setWeatherData,setForecastData,setIsLoading,isLoading,apiKey,baseURL}) {
+
    const inputRef = useRef(null);
 
    async function getValue(currentValue){
-
+      console.log("user",currentValue)
       setIsLoading(true);
 
       try{
          if (currentValue.trim()) {
-            const weatherData = await getWeather(currentValue);
+            const weatherData = await getWeather(currentValue,apiKey,baseURL)
+            const forecastData = await getForecast(currentValue,apiKey,baseURL);
+            setForecastData(forecastData);
             setWeatherData(weatherData);
+
             setCity(currentValue);
          }
-      // eslint-disable-next-line no-unused-vars
       }catch (error){
+         console.error(error);
          alert("Error Fetching weather data!!");
       } finally{
          setIsLoading(false);
@@ -53,7 +57,10 @@ CityInput.propTypes = {
    city: PropTypes.string.isRequired,
    setCity: PropTypes.func.isRequired,
    setWeatherData: PropTypes.func.isRequired,
+   setForecastData: PropTypes.func.isRequired,
    setIsLoading:PropTypes.func.isRequired,
-   isLoading:PropTypes.func.isRequired
+   isLoading:PropTypes.func.isRequired,
+   apiKey:PropTypes.string.isRequired,
+   baseURL:PropTypes.string.isRequired
 
 }

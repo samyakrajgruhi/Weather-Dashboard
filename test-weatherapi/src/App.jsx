@@ -42,12 +42,14 @@ export default function App(){
       // Fetch 5-day forecast data
       const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
       const forecastResponse = await fetch(forecastURL);
-      
+
+
       if (!forecastResponse.ok) {
         throw new Error('Failed to fetch forecast data');
       }
       
       const forecastData = await forecastResponse.json();
+      console.log(forecastData);
       
       // Process current weather data
       setWeather({

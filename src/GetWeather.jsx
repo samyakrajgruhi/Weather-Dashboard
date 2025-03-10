@@ -1,8 +1,6 @@
 import dayjs from "dayjs";
 import PropTypes from 'prop-types';
 
-const apiKey = '915b19d92ea2344787dce2b9eb8cdec4' ;
-const baseURL = 'https://api.openweathermap.org/data/2.5/weather'
 
 function convertTodegree(temp){
    const integerPart = Math.floor(temp);
@@ -14,10 +12,9 @@ function convertTodegree(temp){
    return `${integerPart}°${decimalPart === 0 ? '' : decimalPart}`;
 }
 
-export async function getWeather(city){
-   const currentWeatherURL = `${baseURL}?q=${city}&units=metric&appid=${apiKey}`;
+export async function getWeather(city,apiKey,baseURL){
+   const currentWeatherURL = `${baseURL}/weather?q=${city}&units=metric&appid=${apiKey}`
    const currentWeatherResponse = await fetch(currentWeatherURL);
-
    const currentWeatherData = await currentWeatherResponse.json();
 
    const dateTime = dayjs();
